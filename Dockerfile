@@ -24,6 +24,7 @@ RUN apt-get install --no-install-recommends -y libpng-dev libjpeg62-turbo-dev li
     rm -rf /tmp/pear/
 
 RUN echo 'memory_limit = 512M' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini;
+RUN echo 'max_execution_time = 120' >> /usr/local/etc/php/conf.d/docker-php-maxexectime.ini;
 
 COPY docker/php/conf.d/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 COPY docker/000-default.conf /etc/apache2/sites-available/000-default.conf
