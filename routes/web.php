@@ -97,6 +97,9 @@ Route::middleware(['set-language'])
             });
     });
 
+Route::get('reports-public', ReportsPage::class)
+    ->name('reports-public');
+
 Route::get('languages', [LanguageSelectController::class, 'index'])
     ->name('languages');
 Route::get('languages/{lang}', [LanguageSelectController::class, 'update'])
